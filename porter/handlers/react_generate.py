@@ -28,12 +28,42 @@ class React:
         component_path = os.path.join(temp_path, "src", "components")
 
         template_content = """import React from "react";
-
-export default function %scomponent(props) {
+export default function %(fun_name)s(props) {//该名称可以和文件夹名称一致，第一个字母必须要大写
 
     const { style, title } = props;
-    return<div style={style}>{title}</div>
-}"""
+    return <div style={{
+        position: "absolute",
+        top: style.top,
+        left: style.left,
+        width: style.width,
+        height: style.height,
+        borderWidth: style.borderWidth,
+        borderStyle: style.borderStyle,
+        borderColor: style.borderColor,
+        borderImage: `url(../../../assets/imgs/containerImgs/${style.borderImage}.png) 20 round`
+    }}>
+        <div style={{
+            width: "100%%",
+            height: "100%%",
+            backgroundColor: style.backgroundColor,
+            backgroundImage: `url(../../../assets/imgs/containerImgs/${style.backgroundImage}.png)`,
+            backgroundSize: "100%% 100%%"
+        }}>
+            {!!title ? title.map((titleConfig) => {
+                return <div key={titleConfig.id} className="title" style={{
+                    ...titleConfig.style,
+                    backgroundImage: `url(../assets/imgs/titleImgs/${titleConfig.style.backgroundImage}.png)`,
+                    backgroundSize: "100%% 100%%"
+                }}>
+                    {titleConfig.title}
+                </div>
+            } ) :  null}
+            {/* 从此处开始编写自己的代码 */}
+
+        </div>
+    </div>
+}
+"""
 
         for component in config_data["componentTpl"]:
             file_name = component["componentName"]
@@ -42,7 +72,7 @@ export default function %scomponent(props) {
             os.mkdir(component_folder_path)
 
             with open(os.path.join(component_folder_path, "index.jsx"), "w") as outfile:
-                outfile.write(template_content % file_name.title())
+                outfile.write(template_content % {"fun_name": file_name.title()})
 
     @classmethod
     def run(cls, user_uuid, config_data):
