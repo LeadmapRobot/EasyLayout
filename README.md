@@ -49,7 +49,7 @@
 Download
 
 ```sh
-git clone https://github.com/kidultzz/EasyLayout-bigScreen.git
+git clone https://github.com/LeadmapRobot/EasyLayout.git
 ```
 
 
