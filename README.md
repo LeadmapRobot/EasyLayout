@@ -1,32 +1,62 @@
-# :house: EasyLayout for bigScreen
+# :house: 大屏可视化代码生成器(Dashboard layout code generator)
 
 
-## :clipboard:介绍
 
- >    通过拖拽布局的方式可视化搭建大屏页面。提供了画布、容器和标题三种基本的大屏布局组件，通过对不同组件的配置组合，可实现基本的大屏要素搭建模板。通过工程文件模板下载，为后续开发人员提供了基本的项目开发环境。
+ >    通过拖拽布局的方式可视化搭建大屏页面并生成前端代码工程，为开发人员提供便捷。
  >
- >    目前版本，我们只考虑布局当中基本的容器和标题两要素作为基本拖拽源，选择拖拽源组件到画布区进行布局以及相应的配置。标题组件若拖拽至画布上，则为页面标题，若拖拽至已有的容器内，则为容器标题。
+ >    Create dashboard by simple drag and drop, and transform dashboard to react projects.
  >
  >    ![main-interface.png](https://p5-tt.byteimg.com/origin/pgc-image/61fa2aca5a27444a88c53fe74fe12d44.png)
+ >
+ >    
+ >
  >    在配置完成后，通过下载按钮，可获取到工程文件模板zip压缩包，保存了当前的布局配置信息，解压后即为一个标准react工程项目。
+ >
+ >    Click download(下载) to get project.
+ >
  >    ![download-img.png](https://p26-tt.byteimg.com/origin/pgc-image/09077840389343bb8d4c7f26817c1780.png)
+ >
+ >    
  >
  >    下载的React项目概览
  >
+ >    Download project overview.
+ >
+ >    
+ >
  >    ![123.png](https://p5-tt.byteimg.com/origin/pgc-image/2f02684694164c568c0095ab76455163.png)
+ >
+ >    
+ >
+ >    备注:
+ >
+ >    1. 我们只制作开发了标题与容器两个仅有的拖拽源。
+ >    2. 标题组件若拖拽至画布上，则为页面标题，若拖拽至已有的容器内，则为容器标题。
+ >    3. 容器为空容器，不带任何内容。
+ >
+ >    Ps：
+ >
+ >    1. Only two components, title and container, are mode.
+ >    2. The title put on canvas it was the title of the page, if in the container, it was the title of the container.
+ >    3. The container is empty without any content.
 
 
 
-## :traffic_light:安装
+## :rocket:安装(Install)
 
 下载
+
+Download
 
 ```sh
 git clone https://github.com/kidultzz/EasyLayout-bigScreen.git
 ```
 
 
+
 界面安装(React)
+
+React install
 
 ```bash
 npm install
@@ -37,9 +67,16 @@ cnpm install
 ```
 
 
+
 后台安装(python3)
 
+Python3 install
+
+
+
 依赖组件
+
+Installing python3 modules
 
 ```
 pip install flask
@@ -50,9 +87,13 @@ pip install flask_restful
 
 
 
-## :bike:使用
+## :bike:使用(Run)
 
 界面启动
+
+React run
+
+
 
 本地
 
@@ -65,7 +106,10 @@ npm run prod
 ```
 
 
+
 后台启动
+
+Python run
 
 ```
 python3 manage.py runserver --host 192.168.1.2 --port 9021
@@ -75,7 +119,15 @@ python3 manage.py runserver --host 192.168.1.2 --port 9021
 
 下载的工程启动
 
+Download project run
+
+
+
 React项目工程
+
+React project
+
+
 
 本地
 
