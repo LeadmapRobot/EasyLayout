@@ -1,0 +1,25 @@
+{
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "corejs": false,//默认值，可不写
+                "helpers": true, //默认值，可不写
+                "regenerator": false, //通过preset-env已经使用了全局的regeneratorRuntime,不在需要transform-runtime提供的不污染全局的regeneratorRuntime
+                "useESmodules": true //使用es modules helpers,减少commonJS代码
+            }
+        ],
+        "./plugins/babel/auto-css-modules.js" // 引入css自动转换插件
+    ],
+    "presets": [[
+        "@babel/preset-env",
+        {
+            "targets": {}, //根据实际browserslist设置
+            "useBuiltIns": "usage",//按需加载
+            "corejs": 3, //需显式声明corejs版本，消除警告
+            "modules": false //模块使用es modules,不使用commonJS规范
+        }
+    ],
+    //添加babel对jsx的编译支持
+    "@babel/preset-react"]
+}
